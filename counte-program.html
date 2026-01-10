@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="number">0</h1>
+  <button id="decrease">Decrease</button>
+  <button id="increase">Increase</button>
+  <button id="reset">Reset</button>
+
+  <script>
+    let number = Number(document.getElementById("number").textContent);
+    document.getElementById("decrease").onclick = function(){
+      if(number > 0){
+        number--;
+      }
+      document.getElementById("number").textContent = number;
+    }
+    document.getElementById("increase").onclick = function(){
+        number++;
+        document.getElementById("number").textContent = number;
+    }
+    document.getElementById("reset").onclick = function(){
+        number = 0;
+        document.getElementById("number").textContent = number;
+    }
+    
+  </script>
+</body>
+</html>

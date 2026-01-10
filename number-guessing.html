@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    let min = 50;
+    let max = 100;
+    let randomGuess = Math.floor(Math.random() * (max - min + 1)) + min;
+    console.log(randomGuess);
+
+    let guess = false;
+
+    while(!guess){
+      let userGuess = Number(window.prompt("Guess the number between 50 and 100"));
+      console.log(userGuess);
+      
+      if(userGuess == randomGuess){
+        alert(`You guessed ${userGuess} and computer guessed ${randomGuess}`);
+        guess = true;
+      } else if(isNaN(userGuess) || userGuess == null){
+        alert(`please enter a number`);
+      }
+       else if(userGuess > randomGuess){
+        alert(`You guessed too high`);
+      } else if(userGuess < randomGuess){
+        alert(`You guessed too low`);
+      }
+    }
+
+  </script>
+</body>
+</html>
