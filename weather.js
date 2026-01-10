@@ -1,5 +1,5 @@
 
-const apiKey = "3d98daae9d0d4917e64d9ecf57f529ca";
+const API_KEY = env.OPENWEATHER_KEY;
 
 
 const weatherForm = document.querySelector(".input-div");
@@ -16,7 +16,7 @@ weatherForm.addEventListener("submit", (e)=>{
 async function getWeatherData(city){
 
   try{
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`);
 
     if(!response.ok){
       throw new Error("Error Fetching Weather Data");
