@@ -1,5 +1,6 @@
+import { API_KEY } from "./keys.js";
 
-const API_KEY = env.OPENWEATHER_KEY;
+
 
 
 const weatherForm = document.querySelector(".input-div");
@@ -9,7 +10,7 @@ const weatherCard = document.querySelector(".weather-card");
 weatherForm.addEventListener("submit", (e)=>{
   e.preventDefault();
   const city = inputCity.value;
-  weatherCard.textContent = "";
+  weatherCard.innerHTML = "";
   getWeatherData(city);
 });
 
@@ -76,5 +77,6 @@ function displayErrorMsg(error) {
   const errorEle = document.createElement("p");
   errorEle.textContent = error;
   weatherCard.appendChild(errorEle);
+  weatherCard.style.display = "flex";
 
  }
